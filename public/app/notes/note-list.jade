@@ -1,0 +1,27 @@
+.container
+	h1 {{identity.currentUser.firstName}}'s Notes
+	.row
+		form.form-horizontal.col-md-6.pull-left(name="noteForm")
+			fieldset
+				legend New Note
+				.form-group
+					label.col-md-2.control-label(for="content") Content
+					.col-md-10
+						textarea.form-control(name="content", type="text", placeholder="Content of note...", ng-model="content", required)
+				.form-group
+					label.col-md-2.control-label(for="category") Category
+					.col-md-10
+						input.form-control(name="category", type="text", placeholder="Category", ng-model="category", required)
+				.form-group
+					.col-md-10.col-md-offset-2
+						.pull-right
+							button.btn.btn-primary(ng-click="createNote()", ng-disabled="noteForm.$invalid") Submit
+							| &nbsp;
+							a.btn.btn-default(href="/") Cancel
+		.col-md-6.pull-right
+			.panel.panel-primary(ng-repeat="note in notes")
+				.panel-heading {{note.category}}
+					button.btn.btn-danger(ng-click="deleteNote(note._id)") 
+				.panel-body
+					h3 {{note.content}}
+					h3 {{note.createdOn | date}}

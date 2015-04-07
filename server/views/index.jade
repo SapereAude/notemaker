@@ -1,0 +1,23 @@
+extends ../includes/layout
+
+block main-content
+    .navbar.navbar-inverse.navbar-fixed-top
+        .container
+            .navbar-header
+                h1
+                    a.navbar-brand(href="/") Go Monkey
+            .navbar-collapse.collapse
+                //- ul.nav.navbar-nav
+                //-     li
+                //-         a(href="/") Home
+                //-     li
+                //-         a(href="/notes/{{identity.currentUser._id}}") Notes
+                //-     li
+                //-         a(href="/courses") Courses
+                div(ng-include="'/partials/account/navbar-login'")
+
+    section.content
+        div(ng-view)
+
+    footer.container.text-center
+        p &copy; 2015 Go Monkey
