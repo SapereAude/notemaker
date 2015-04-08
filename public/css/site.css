@@ -24,6 +24,12 @@ footer p {
 .top-padding-med {
   padding-top: 10px;
 }
+.top-margin-xsmall {
+  margin-top: 2px;
+}
+.right-margin-med {
+  margin-right: 10x;
+}
 .margin-left-med {
   margin-left: 10px;
 }

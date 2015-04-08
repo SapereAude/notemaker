@@ -7,13 +7,6 @@ block main-content
                 h1
                     a.navbar-brand(href="/") Go Monkey
             .navbar-collapse.collapse
-                //- ul.nav.navbar-nav
-                //-     li
-                //-         a(href="/") Home
-                //-     li
-                //-         a(href="/notes/{{identity.currentUser._id}}") Notes
-                //-     li
-                //-         a(href="/courses") Courses
                 div(ng-include="'/partials/account/navbar-login'")
 
     section.content

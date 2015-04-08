@@ -20,8 +20,8 @@
 							a.btn.btn-default(href="/") Cancel
 		.col-md-6.pull-right
 			.panel.panel-primary(ng-repeat="note in notes")
+				button.btn.btn-danger.pull-right.top-margin-xsmall.right-margin-xsmall(ng-click="deleteNote(note._id)") Delete
 				.panel-heading {{note.category}}
-					button.btn.btn-danger(ng-click="deleteNote(note._id)") 
 				.panel-body
 					h3 {{note.content}}
 					h3 {{note.createdOn | date}}

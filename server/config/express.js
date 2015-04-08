@@ -19,7 +19,7 @@ module.exports = function (app, config) {
 	app.use(bodyParser());
 	app.use(session({secret: 'hallókallóbimbó',resave:false,saveUninitialized:false}));
 	app.use(passport.initialize());
-	app.use(passport.session()); //authorize users with cookies
+	app.use(passport.session()); //authorize users with cookie session
 	app.use(stylus.middleware(
 		{
 			src: config.rootPath + '/public',
