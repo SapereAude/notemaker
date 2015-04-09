@@ -9,9 +9,4 @@ module.exports = function (config) {
 	db.once('open', function callback() {
 		console.log('meanstack db opened');
 	});
-
-	userModel.createDefaultUsers();
-	notesModel.createDefaultNotes();
-
-
 }
