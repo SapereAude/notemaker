@@ -8,7 +8,7 @@ module.exports = {
 		port: process.env.PORT || 3030
 	},
 	production: {
-		db: 'mongodb://<user>:<pswd>@ds061741.mongolab.com:61741/<dbname>',
+		db: 'mongodb://hlynur:hlynur@ds061741.mongolab.com:61741/notemakerdb',
 		rootPath: rootPath,
 		port: process.env.PORT || 80
 	}
