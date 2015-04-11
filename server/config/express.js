@@ -16,7 +16,9 @@ module.exports = function (app, config) {
 	app.set('view engine', 'jade');
 	app.use(logger('dev'));
 	app.use(cookieParser());
-	app.use(bodyParser());
+	app.use(bodyParser.urlencoded({extended: true}));
+	app.use(bodyParser.json());
+	//app.use(bodyParser());
 	app.use(session({secret: 'hallókallóbimbó',resave:false,saveUninitialized:false}));
 	app.use(passport.initialize());
 	app.use(passport.session()); //authorize users with cookie session
