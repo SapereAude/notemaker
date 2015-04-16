@@ -17,10 +17,10 @@
 						.pull-right
 							button.btn.btn-primary(ng-click="createNote()", ng-disabled="noteForm.$invalid") Submit
 							| &nbsp;
-							a.btn.btn-default(href="/") Cancel
+							a.btn.btn-default(ng-click="emptyInput()") Cancel
 		.col-md-6.pull-right
 			.panel.panel-primary(ng-repeat="note in notes")
-				button.btn.btn-danger.pull-right.top-margin-xsmall.right-margin-xsmall(ng-click="deleteNote(note._id)") Delete
+				button.btn.btn-danger.pull-right.top-margin-xsmall.right-margin-xsmall(ng-click="deleteNoteFromDb(note._id, note)") Delete
 				.panel-heading {{note.category}}
 				.panel-body
 					h3 {{note.content}}

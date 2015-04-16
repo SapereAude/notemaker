@@ -33,18 +33,28 @@ angular.module('app')
 				return deferred.promise;
 			},
 			createUserNote: function (newUserNote) {
-				var newNote = new mvNote(newUserNote);
 				var deferred = $q.defer();
+				var newNote = new mvNote(newUserNote);
 
 				newNote.$save().then(function () {
 					deferred.resolve();
 				}, function (response) {
-					deferred.reject(response.date.reason);
+					deferred.reject(response.data.reason);
 				});
 				return deferred.promise;
 			},
 			deleteUserNote: function (noteToDelete) {
+				var deferred = $q.defer();
 				var note = new mvNote();
+			
+				note.$delete({_id: noteToDelete}).then(function () {
+					deferred.resolve();
+				}, function (response) {
+					deferred.reject(response.data.reason);
+				});
+			
+				return deferred.promise;
+				/*var note = new mvNote();
 				var deferred = $q.defer();
 
 				note.$remove({_id: noteToDelete}).then(function () {
@@ -52,7 +62,7 @@ angular.module('app')
 				}, function (response) {
 					deferred.reject(response.data.reason);
 				});
-				return deferred.promise;
+				return deferred.promise;*/
 			},
 			updateCurrentUser: function (newUserData) {
 				var deferred = $q.defer();
