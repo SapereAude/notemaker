@@ -54,15 +54,6 @@ angular.module('app')
 				});
 			
 				return deferred.promise;
-				/*var note = new mvNote();
-				var deferred = $q.defer();
-
-				note.$remove({_id: noteToDelete}).then(function () {
-					deferred.resolve();
-				}, function (response) {
-					deferred.reject(response.data.reason);
-				});
-				return deferred.promise;*/
 			},
 			updateCurrentUser: function (newUserData) {
 				var deferred = $q.defer();

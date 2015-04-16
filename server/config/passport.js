@@ -7,8 +7,8 @@ module.exports = function () {
 
 	// Authenticate user with 'username' and 'password' (default for passport.js)
 	passport.use(new LocalStrategy(
-		function (username, password, done) {
-			User.findOne({username: username}).exec(function (err, user) {
+		function(username, password, done) {
+			User.findOne({username: username}).exec(function(err, user) {
 				if(user && user.authenticate(password)){
 					return done(null, user);	
 				} else {
@@ -21,17 +21,16 @@ module.exports = function () {
 
 
 // Fill cookie with user object
-	passport.serializeUser(function (user, done) {
+	passport.serializeUser(function(user, done) {
 		if(user){
-			console.log('user object: ', user);
 			done(null, user._id);
 		}
 	});
 
 
 // 
-	passport.deserializeUser(function (id, done) {
-		User.findOne({_id: id}).exec(function (err, user) {
+	passport.deserializeUser(function(id, done) {
+		User.findOne({_id: id}).exec(function(err, user) {
 			if(user) {
 				return done(null, user);
 			} else {

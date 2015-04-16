@@ -44,12 +44,9 @@ exports.updateUser = function (req, res) {
 		req.user.hashed_pwd = encrypt.hashPwd(req.user.salt, userUpdates.password)
 	}
 	req.user.save(function (err) {
-		if(err) {
-			res.status(400);
-			return res.send({
-				reason: err.toString()
-			});
+		if(err) { 
+			res.status(400); return res.send({reason: err.toString()});
 		}
 		res.send(req.user);
-	})
-}
+	});
+};
