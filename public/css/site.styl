@@ -1,5 +1,6 @@
-body
-  padding-top 69px
+html, body
+  height 100%
+  overflow-x hidden
 
 .navbar-header a.navbar-brand
   margin-top -15px
@@ -25,7 +26,7 @@ footer
   margin-top 2px
 
 .right-margin-med
-  margin-right 10x
+  margin-right 10px
 
 .margin-left-med
   margin-left 10px
@@ -36,3 +37,243 @@ footer
 .toast-success
   background-color #13987e
 
+//-sticky footer*/
+#wrapper
+  min-height 100%
+  height auto
+  //- Negative indent footer by its height */
+  margin 0 auto -60px
+  //- Pad bottom by footer height */
+  padding 0 0 60px
+
+
+//- Set the fixed height of the footer here */
+#footer
+  height 60px
+  background-color #f5f5f5
+  width 100%
+  position absolute
+  bottom 0
+
+
+//- ANIMATIONS
+
+//- leaving animations 
+//- slide out from sides
+//- LEFT
+
+@-webkit-keyframes slideOutLeft {
+    to      { transform: translateX(-100%); }
+}
+@-moz-keyframes slideOutLeft {
+    to      { transform: translateX(-100%); }
+}
+@-o-keyframes slideOutLeft {
+    to      { transform: translateX(-100%); }
+}
+@-ms-keyframes slideOutLeft {
+    to      { transform: translateX(-100%); }
+}
+@keyframes slideOutLeft {
+    to      { transform: translateX(-100%); }
+}
+
+//- RIGHT
+@-webkit-keyframes slideOutRight {
+    to      { transform: translateX( 100%); }
+}
+@-moz-keyframes slideOutRight {
+    to      { transform: translateX( 100%); }
+}
+@-o-keyframes slideOutRight {
+    to      { transform: translateX( 100%); }
+}
+@-ms-keyframes slideOutRight {
+    to      { transform: translateX( 100%); }
+}
+@keyframes slideOutRight {
+    to      { transform: translateX( 100%); }
+}
+
+//-entering animations 
+//- slide in from the right
+@-webkit-keyframes slideInRight {
+    from    { transform:translateX(100%); }
+    to      { transform: translateX(0); }
+}
+@-moz-keyframes slideInRight {
+    from    { transform:translateX(100%); }
+    to      { transform: translateX(0); }
+}@-o-keyframes slideInRight {
+    from    { transform:translateX(100%); }
+    to      { transform: translateX(0); }
+}
+@-ms-keyframes slideInRight {
+    from    { transform:translateX(100%); }
+    to      { transform: translateX(0); }
+}
+@keyframes slideInRight {
+    from    { transform:translateX(100%); }
+    to      { transform: translateX(0); }
+}
+
+//- slide from bottom
+@-webkit-keyframes slideUp {
+    from    { transform:translateY(100%); }
+    to      { transform: translateY(0); }
+}
+@-moz-keyframes slideUp {
+    from    { transform:translateY(100%); }
+    to      { transform: translateY(0); }
+}
+@-o-keyframes slideUp {
+    from    { transform:translateY(100%); }
+    to      { transform: translateY(0); }
+}
+@-ms-keyframes slideUp {
+    from    { transform:translateY(100%); }
+    to      { transform: translateY(0); }
+}
+@keyframes slideUp {
+    from    { transform:translateY(100%); }
+    to      { transform: translateY(0); }
+}
+
+
+//- Ng Animation Directives*/
+.ng-enter
+  z-index 8888
+.ng-leave
+  z-index 9999
+
+//- page specific animations
+
+
+//- default animation
+.page-site.ng-enter
+  -webkit-animation slideInRight 1.5s both ease-out
+  -moz-animation slideInRight 1.5s both ease-out
+  -o-animation slideInRight 1.5s both ease-out
+  -ms-animation slideInRight 1.5s both ease-out
+  animation slideInRight 1.5s both ease-out
+  opacity 0
+  position absolute
+  left 0
+  right 0
+  top 72px
+
+.page-site.ng-enter-active
+  -webkit-animation slideInRight 1.5s both ease-out
+  -moz-animation slideInRight 1.5s both ease-out
+  -o-animation slideInRight 1.5s both ease-out
+  -ms-animation slideInRight 1.5s both ease-out
+  animation slideInRight 1.5s both ease-out
+  opacity 1
+
+.page-site.ng-leave
+  -webkit-animation slideOutLeft 0.3s both ease-in
+  -moz-animation slideOutLeft 0.3s both ease-in
+  -o-animation slideOutLeft 0.3s both ease-in
+  -ms-animation slideOutLeft 0.3s both ease-in
+  animation slideOutLeft 0.3s both ease-in
+
+
+// Animated Notes
+
+.note-box.ng-enter
+  -webkit-animation slideInRight 1.5s both ease-out
+  -moz-animation slideInRight 1.5s both ease-out
+  -o-animation slideInRight 1.5s both ease-out
+  -ms-animation slideInRight 1.5s both ease-out
+  animation slideInRight 1.5s both ease-out
+  
+.note-box.ng-enter-active
+  -webkit-animation slideInRight 1.5s both ease-out
+  -moz-animation slideInRight 1.5s both ease-out
+  -o-animation slideInRight 1.5s both ease-out
+  -ms-animation slideInRight 1.5s both ease-out
+  animation slideInRight 1.5s both ease-out
+
+.note-box.ng-leave
+  -webkit-animation slideOutRight 0.3s both ease-in
+  -moz-animation slideOutRight 0.3s both ease-in
+  -o-animation slideOutRight 0.3s both ease-in
+  -ms-animation slideOutRight 0.3s both ease-in
+  animation slideOutRight 0.3s both ease-in
+
+.note-box.ng-leave-active
+  -webkit-animation slideOutRight 0.3s both ease-in
+  -moz-animation slideOutRight 0.3s both ease-in
+  -o-animation slideOutRight 0.3s both ease-in
+  -ms-animation slideOutRight 0.3s both ease-in
+  animation slideOutRight 0.3s both ease-in
+
+.note-box.ng-move
+  -webkit-animation slideUp 0.3s both ease-in
+  -moz-animation slideUp 0.3s both ease-in
+  -o-animation slideUp 0.3s both ease-in
+  -ms-animation slideUp 0.3s both ease-in
+  animation slideUp 0.3s both ease-in
+
+.note-box.ng-move-active
+  -webkit-animation slideUp 0.3s both ease-in
+  -moz-animation slideUp 0.3s both ease-in
+  -o-animation slideUp 0.3s both ease-in
+  -ms-animation slideUp 0.3s both ease-in
+  animation slideUp 0.3s both ease-in
+
+
+//- OLD STUFF Animated Notes
+//- 
+//- .animate-enter,.animate-leave
+//-     -webkit-transition 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all
+//-     -moz-transition 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all
+//-     -ms-transition 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all
+//-     -o-transition 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all
+//-     transition 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all
+//-     position relative
+//-     display block
+//-  
+//- 
+//- .animate-leave.animate-leave-active,.animate-enter
+//-     -webkit-transform rotateX(-180deg) translatez(30px)
+//-     -moz-transform rotateX(-180deg) translatez(30px)
+//-     -ms-transform rotateX(-180deg) translatez(30px)
+//-     -o-transform rotateX(-180deg) translatez(30px)
+//-     transform rotateX(-180deg) translatez(30px)
+//-     opacity 0
+//-     height 0px
+//-         
+//- 
+//- .animate-enter.animate-enter-active,.animate-leave
+//-   -webkit-transform rotateX(0deg) translatez(30px)
+//-   -moz-transform rotateX(0deg) translatez(30px)
+//-   -ms-transform rotateX(0deg) translatez(30px)
+//-   -o-transform rotateX(0deg) translatez(30px)
+//-   transform rotateX(0deg) translatez(30px)
+//-   opacity 1
+//-   height 30px
+
+
+
+//- Create note animation-------------------*/
+//-   .repeat-item.ng-enter,
+//-   .repeat-item.ng-leave 
+//-     -webkit-transition 0.5s linear all
+//-     transition 0.5s linear all
+//- 
+//-   .repeat-item.ng-enter,
+//-   .repeat-item.ng-leave.ng-leave-active
+//-     opacity 0
+//- 
+//-   .repeat-item.ng-leave,
+//-   .repeat-item.ng-enter.ng-enter-active
+//-     opacity 1
+
+//- .ng-enter
+//-   -webkit-transition 1s linear all
+//-   transition 1s linear all
+//-   opacity 0
+//- 
+//- .ng-enter.ng-enter-active
+//-   opacity 1

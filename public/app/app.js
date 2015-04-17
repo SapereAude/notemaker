@@ -1,4 +1,4 @@
-angular.module('app', ['ngResource', 'ngRoute']);
+angular.module('app', ['ngResource', 'ngRoute', 'ngAnimate']);
 
 angular.module('app')
 	.config(function ($routeProvider, $locationProvider) {
@@ -38,7 +38,7 @@ angular.module('app')
 				resolve: routeRoleChecks.user
 			});	
 	});
-
+//Redirects unauthorized users to main page
 angular.module('app').run(function ($rootScope, $location) {
 	$rootScope.$on('$routeChangeError', function (event, current, previous, rejection) {
 		if(rejection === 'not authorized'){

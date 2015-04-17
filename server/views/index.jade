@@ -1,16 +1,22 @@
 extends ../includes/layout
 
 block main-content
-    .navbar.navbar-inverse.navbar-fixed-top
-        .container
-            .navbar-header
-                h1
-                    a.navbar-brand(href="/") Go Monkey
-            .navbar-collapse.collapse
-                div(ng-include="'/partials/account/navbar-login'")
+    div.wrapper
+        nav.navbar.navbar-inverse.navbar-static-top
+            .container-fluid
+                .navbar-header
+                    button.navbar-toggle(type="button" data-toggle="collapse" data-target="#collapse")
+                        span.sr-only Toggle Navigation
+                        span.icon-bar
+                        span.icon-bar
+                        span.icon-bar
+                    h1
+                        a.navbar-brand(href="/") NoteMaker
+                .collapse.navbar-collapse#collapse
+                    div(ng-include="'/partials/account/navbar-login'")
 
-    section.content
-        div(ng-view)
+        section.content-fluid
+            div(class="page {{ pageClass }}" ng-view)
 
-    footer.container.text-center
-        p &copy; 2015 Go Monkey
+        footer.container.text-center#footer
+            p &copy; 2015 Hlynurinn 

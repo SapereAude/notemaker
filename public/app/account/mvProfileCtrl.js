@@ -1,4 +1,7 @@
 angular.module('app').controller('mvProfileCtrl', function ($scope, mvAuth, mvIdentity, mvNotifier) {
+	
+	$scope.pageClass = 'page-site';
+
 	$scope.email = mvIdentity.currentUser.username;
 	$scope.fname = mvIdentity.currentUser.firstName;
 	$scope.lname = mvIdentity.currentUser.lastName;

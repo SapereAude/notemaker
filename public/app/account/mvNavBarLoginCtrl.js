@@ -4,9 +4,9 @@ angular.module('app')
 		$scope.signin = function(username, password) {
 			mvAuth.authenticateUser(username, password).then(function (success) {
 				if(success){
-					mvNotifier.notify('You are logged in!')
+					mvNotifier.login('You are logged in!')
 				} else {
-					mvNotifier.notify('Dang it! Username/Password combination incorrect!');
+					mvNotifier.logFail('Dang it! Username/Password combination incorrect!');
 				}
 			});
 		}
@@ -15,7 +15,7 @@ angular.module('app')
 			mvAuth.logoutUser().then(function () {
 				$scope.username = "";
 				$scope.password = "";
-				mvNotifier.notify('You have successfully signed out!');
+				mvNotifier.login('You have successfully signed out!');
 				$location.path('/');
 			})
 		}

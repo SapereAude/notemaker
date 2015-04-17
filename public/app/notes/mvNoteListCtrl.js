@@ -1,6 +1,6 @@
 angular.module('app')
 	.controller('mvNoteListCtrl', function($scope, mvIdentity, mvNotifier, $location, mvAuth, mvNote, $routeParams, $filter) {
-		
+		$scope.pageClass = 'page-site';
 		$scope.notes = mvNote.query({_id: $routeParams.id});
 
 		$scope.identity = mvIdentity;
