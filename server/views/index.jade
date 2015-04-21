@@ -3,20 +3,19 @@ extends ../includes/layout
 block main-content
     div.wrapper
         nav.navbar.navbar-inverse.navbar-static-top
-            .container-fluid
-                .navbar-header
+            .container
+                h1.col-lg-6.col-md-6
+                    a.navbar-brand(href="/") NoteMaker
+                .col-lg-6.col-md-6.navbar-header
                     button.navbar-toggle(type="button" data-toggle="collapse" data-target="#collapse")
                         span.sr-only Toggle Navigation
                         span.icon-bar
                         span.icon-bar
                         span.icon-bar
-                    h1
-                        a.navbar-brand(href="/") NoteMaker
-                .collapse.navbar-collapse#collapse
+                .col-lg-6.col-md-6.pull-right.collapse.navbar-collapse#collapse
                     div(ng-include="'/partials/account/navbar-login'")
-
-        section.content-fluid
+        section.container
             div(class="page {{ pageClass }}" ng-view)
 
         footer.container.text-center#footer
-            p &copy; 2015 Hlynurinn 
+            p &copy; 2015 Hlynurinn

@@ -1,10 +1,10 @@
-.navbar-right.right-margin-med(ng-controller="mvNavBarLoginCtrl")
-    ul.nav.navbar-nav(ng-show="identity.isAuthenticated()")
+.navbar-right(ng-controller="mvNavBarLoginCtrl")
+    ul.nav.navbar-nav.col-md-4.col-lg-4(ng-show="identity.isAuthenticated()")
             li
                 a(href="/") Home
             li
                 a(href="/notes/{{identity.currentUser._id}}") Notes
-    form.navbar-form(ng-hide="identity.isAuthenticated()")
+    form.navbar-form.col-md-4.col-lg-4(ng-hide="identity.isAuthenticated()")
         ul.nav.navbar-nav
             li
                 a(href="/signup") Sign Up
@@ -13,7 +13,7 @@
         .form-group
             input.form-control(type="password", placeholder="Password", ng-model="password")
         button.btn.btn-primary(ng-click="signin(username, password)") Sign In
-    ul.nav.navbar-nav.navbar-right(ng-show="identity.isAuthenticated()")
+    ul.nav.navbar-nav.navbar-right.col-md-4.col-lg-4(ng-show="identity.isAuthenticated()")
         li.dropdown
             a.dropdown-toggle(href="", data-toggle="dropdown")
                 | {{identity.currentUser.firstName + " " + identity.currentUser.lastName}}

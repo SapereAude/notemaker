@@ -174,7 +174,7 @@ footer p {
   position: absolute;
   left: 0;
   right: 0;
-  top: 72px;
+  top: 102px;
 }
 .page-site.ng-enter-active {
   -webkit-animation: slideInRight 1.5s both ease-out;
