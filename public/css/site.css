@@ -55,6 +55,14 @@ footer p {
   position: absolute;
   bottom: 0;
 }
+/*main.jade mean image*/
+.mean-img {
+  position: relative;
+  bottom: 5px;
+}
+.jumbotron {
+  min-height: 200px;
+}
 @-webkit-keyframes slideOutLeft {
   to {
     transform: translateX(-200%);
