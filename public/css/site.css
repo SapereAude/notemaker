@@ -11,6 +11,7 @@ body {
   color: #ccc;
 }
 footer {
+  margin-bottom: -50px;
   padding-left: 15px;
   padding-right: 15px;
 }
@@ -56,7 +57,7 @@ footer p {
 }
 @-webkit-keyframes slideOutLeft {
   to {
-    transform: translateX(-100%);
+    transform: translateX(-200%);
   }
 }
 @-moz-keyframes slideOutLeft {
@@ -171,10 +172,6 @@ footer p {
   -ms-animation: slideInRight 1.5s both ease-out;
   animation: slideInRight 1.5s both ease-out;
   opacity: 0;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 102px;
 }
 .page-site.ng-enter-active {
   -webkit-animation: slideInRight 1.5s both ease-out;
@@ -190,6 +187,7 @@ footer p {
   -o-animation: slideOutLeft 0.3s both ease-in;
   -ms-animation: slideOutLeft 0.3s both ease-in;
   animation: slideOutLeft 0.3s both ease-in;
+  position: absolute;
 }
 .note-box.ng-enter {
   -webkit-animation: slideInRight 1.5s both ease-out;
@@ -232,6 +230,18 @@ footer p {
   -o-animation: slideUp 0.3s both ease-in;
   -ms-animation: slideUp 0.3s both ease-in;
   animation: slideUp 0.3s both ease-in;
+}
+.red {
+  background-color: #f00;
+}
+.blue {
+  background-color: #00f;
+}
+.green {
+  background-color: #0f0;
+}
+.yellow {
+  background-color: #0ff;
 }
 @-moz-keyframes slideOutLeft {
   to {

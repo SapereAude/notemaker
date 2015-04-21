@@ -9,6 +9,7 @@ html, body
     color #CCCCCC
 
 footer
+  margin-bottom -50px
   padding-left 15px
   padding-right 15px
   p
@@ -63,7 +64,7 @@ footer
 //- LEFT
 
 @-webkit-keyframes slideOutLeft {
-    to      { transform: translateX(-100%); }
+    to      { transform: translateX(-200%); }
 }
 @-moz-keyframes slideOutLeft {
     to      { transform: translateX(-100%); }
@@ -157,10 +158,6 @@ footer
   -ms-animation slideInRight 1.5s both ease-out
   animation slideInRight 1.5s both ease-out
   opacity 0
-  position absolute
-  left 0
-  right 0
-  top 102px
 
 .page-site.ng-enter-active
   -webkit-animation slideInRight 1.5s both ease-out
@@ -176,7 +173,7 @@ footer
   -o-animation slideOutLeft 0.3s both ease-in
   -ms-animation slideOutLeft 0.3s both ease-in
   animation slideOutLeft 0.3s both ease-in
-
+  position absolute
 
 // Animated Notes
 
@@ -221,3 +218,15 @@ footer
   -o-animation slideUp 0.3s both ease-in
   -ms-animation slideUp 0.3s both ease-in
   animation slideUp 0.3s both ease-in 
+
+.red
+  background-color #ff0000
+
+.blue
+  background-color #0000ff
+
+.green
+  background-color #00ff00
+
+.yellow
+  background-color #00ffff
