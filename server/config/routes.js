@@ -12,8 +12,10 @@ module.exports = function (app) {
 
 	app.post('/api/notes', notes.createNote);
 	app.get('/api/notes/:id', notes.getUserNotes);
+	//app.get('/api/notes/:noteid:', notes.getUserNote);
 	app.get('/api/notes', auth.requiresRole('admin'), notes.getNotes);
 	app.delete('/api/notes/:id', notes.deleteNote);
+	app.put('/api/notes/:id', notes.updateNote);
 
 	app.get('/partials/*', function (req, res) {
 		res.render('../../public/app/' + req.params[0]);

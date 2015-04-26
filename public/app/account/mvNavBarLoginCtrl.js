@@ -5,6 +5,7 @@ angular.module('app')
 			mvAuth.authenticateUser(username, password).then(function (success) {
 				if(success){
 					mvNotifier.login('You are logged in!')
+					$location.path('/notes/' + mvIdentity.currentUser._id);
 				} else {
 					mvNotifier.logFail('Dang it! Username/Password combination incorrect!');
 				}

@@ -83,24 +83,56 @@ footer p {
     transform: translateX(-100%);
   }
 }
-@-webkit-keyframes slideOutRight {
+@-webkit-keyframes fadeOut {
   to {
-    transform: translateX(100%);
+    opacity: 0;
   }
 }
-@-moz-keyframes slideOutRight {
+@-moz-keyframes fadeOut {
   to {
-    transform: translateX(100%);
+    opacity: 0;
   }
 }
-@-o-keyframes slideOutRight {
+@-o-keyframes fadeOut {
   to {
-    transform: translateX(100%);
+    opacity: 0;
   }
 }
-@-ms-keyframes slideOutRight {
+@-ms-keyframes fadeOut {
   to {
-    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-moz-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-o-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-ms-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 @-webkit-keyframes slideInRight {
@@ -198,32 +230,32 @@ footer p {
   position: absolute;
 }
 .note-box.ng-enter {
-  -webkit-animation: slideInRight 1.5s both ease-out;
-  -moz-animation: slideInRight 1.5s both ease-out;
-  -o-animation: slideInRight 1.5s both ease-out;
-  -ms-animation: slideInRight 1.5s both ease-out;
-  animation: slideInRight 1.5s both ease-out;
+  -webkit-animation: fadeIn 1.5s both ease-out;
+  -moz-animation: fadeIn 1.5s both ease-out;
+  -o-animation: fadeIn 1.5s both ease-out;
+  -ms-animation: fadeIn 1.5s both ease-out;
+  animation: fadeIn 1.5s both ease-out;
 }
 .note-box.ng-enter-active {
-  -webkit-animation: slideInRight 1.5s both ease-out;
-  -moz-animation: slideInRight 1.5s both ease-out;
-  -o-animation: slideInRight 1.5s both ease-out;
-  -ms-animation: slideInRight 1.5s both ease-out;
-  animation: slideInRight 1.5s both ease-out;
+  -webkit-animation: fadeIn 1.5s both ease-out;
+  -moz-animation: fadeIn 1.5s both ease-out;
+  -o-animation: fadeIn 1.5s both ease-out;
+  -ms-animation: fadeIn 1.5s both ease-out;
+  animation: fadeIn 1.5s both ease-out;
 }
 .note-box.ng-leave {
-  -webkit-animation: slideOutRight 0.3s both ease-in;
-  -moz-animation: slideOutRight 0.3s both ease-in;
-  -o-animation: slideOutRight 0.3s both ease-in;
-  -ms-animation: slideOutRight 0.3s both ease-in;
-  animation: slideOutRight 0.3s both ease-in;
+  -webkit-animation: fadeOut 0.3s both ease-in;
+  -moz-animation: fadeOut 0.3s both ease-in;
+  -o-animation: fadeOut 0.3s both ease-in;
+  -ms-animation: fadeOut 0.3s both ease-in;
+  animation: fadeOut 0.3s both ease-in;
 }
 .note-box.ng-leave-active {
-  -webkit-animation: slideOutRight 0.3s both ease-in;
-  -moz-animation: slideOutRight 0.3s both ease-in;
-  -o-animation: slideOutRight 0.3s both ease-in;
-  -ms-animation: slideOutRight 0.3s both ease-in;
-  animation: slideOutRight 0.3s both ease-in;
+  -webkit-animation: fadeOut 0.3s both ease-in;
+  -moz-animation: fadeOut 0.3s both ease-in;
+  -o-animation: fadeOut 0.3s both ease-in;
+  -ms-animation: fadeOut 0.3s both ease-in;
+  animation: fadeOut 0.3s both ease-in;
 }
 .note-box.ng-move {
   -webkit-animation: slideUp 0.3s both ease-in;
@@ -238,18 +270,6 @@ footer p {
   -o-animation: slideUp 0.3s both ease-in;
   -ms-animation: slideUp 0.3s both ease-in;
   animation: slideUp 0.3s both ease-in;
-}
-.red {
-  background-color: #f00;
-}
-.blue {
-  background-color: #00f;
-}
-.green {
-  background-color: #0f0;
-}
-.yellow {
-  background-color: #0ff;
 }
 @-moz-keyframes slideOutLeft {
   to {
@@ -271,24 +291,56 @@ footer p {
     transform: translateX(-100%);
   }
 }
-@-moz-keyframes slideOutRight {
+@-moz-keyframes fadeOut {
   to {
-    transform: translateX(100%);
+    opacity: 0;
   }
 }
-@-webkit-keyframes slideOutRight {
+@-webkit-keyframes fadeOut {
   to {
-    transform: translateX(100%);
+    opacity: 0;
   }
 }
-@-o-keyframes slideOutRight {
+@-o-keyframes fadeOut {
   to {
-    transform: translateX(100%);
+    opacity: 0;
   }
 }
-@keyframes slideOutRight {
+@keyframes fadeOut {
   to {
-    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+@-moz-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-o-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 @-moz-keyframes slideInRight {

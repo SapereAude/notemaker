@@ -14,14 +14,30 @@
 			.form-group
 				.col-md-10.col-lg-10.col-md-offset-2
 					.pull-right
-						button.btn.btn-primary(ng-click="createNote()", ng-disabled="noteForm.$invalid") Submit
+						button.btn.btn-primary(ng-hide="", ng-click="createNote()", ng-disabled="noteForm.$invalid") Submit
 						| &nbsp;
-						a.btn.btn-default(ng-click="emptyInput()") Cancel
+						a.btn.btn-default(ng-click="emptyInput()" ng-disabled="noteForm.$invalid") Cancel
 	.col-md-6.col-lg-6
-		.panel.panel-primary.note-box(ng-repeat="note in notes | date")
-			button.btn.btn-danger.pull-right.top-margin-xsmall(ng-click="deleteNoteFromDb(note._id, note)") Delete
-			.panel-heading {{note.created | date : format : mediumDate}}
-
-			.panel-body
-				h3.label.label-primary {{note.category}}
-				p {{note.content}}
+		.panel.panel-primary.note-box.animate-repeat(ng-repeat="note in notes | date", class="{{editSwitch}}")
+			//-.btn-group
+			button.btn.btn-danger.pull-right.top-margin-xsmall(ng-hide="isSelected(note)", ng-click="deleteNote(note._id, note)") Delete
+			button.btn.btn-success.pull-right.top-margin-xsmall.right-margin-med(ng-hide="isSelected(note)", ng-click="editMode(note)") Edit
+			button.btn.btn-primary.pull-right.top-margin-xsmall.right-margin-med(ng-show="isSelected(note)", ng-click="updateNote(note)") Update
+			button.btn.btn-warning.pull-right.top-margin-xsmall.right-margin-med(ng-show="isSelected(note)", ng-click="cancelEdit()") Cancel
+			.panel.panel-default(ng-hide="isSelected(note)")
+				.panel-heading {{note.created | date : format : mediumDate}}
+				.panel-body
+					.label.label-primary {{note.category}}
+					p {{note.content}}
+					p {{note._id}}
+			.panel.panel-default(ng-show="isSelected(note)")
+				form.form-horizontal(name="noteForm")
+					.panel-heading
+						.form-group
+							label(for="editCategory") Category
+								input.form-control(name="editCategory", type="text", placeholder="{{note.category}}", ng-model="$parent.editCategory")
+					.panel-body
+						.form-group
+							label(for="editContent") Content
+								textarea.form-control(name="editContent", type="text", placeholder="{{note.content}}", ng-model="$parent.editContent")
+					

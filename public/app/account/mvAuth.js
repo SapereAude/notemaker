@@ -38,9 +38,25 @@ angular.module('app')
 
 				newNote.$save().then(function () {
 					deferred.resolve();
+					console.log('RESOLVED', deferred.resolve);
 				}, function (response) {
 					deferred.reject(response.data.reason);
 				});
+				return deferred.promise;
+			},
+			updateUserNote: function (noteId, editNote) {
+				var deferred = $q.defer();
+				
+				var note = new mvNote(editNote);
+				
+				note.$edit({_id: noteId}).then(function () {
+					deferred.resolve();
+					console.log('RESOLVED', deferred.resolve);
+				}, function (response) {
+
+					deferred.reject(response);
+				});
+				console.log('PROMISE', deferred.promise);
 				return deferred.promise;
 			},
 			deleteUserNote: function (noteToDelete) {
@@ -49,8 +65,9 @@ angular.module('app')
 			
 				note.$delete({_id: noteToDelete}).then(function () {
 					deferred.resolve();
+					console.log('RESOLVED', deferred.resolve);
 				}, function (response) {
-					deferred.reject(response.data.reason);
+					deferred.reject(response);
 				});
 			
 				return deferred.promise;
@@ -63,6 +80,7 @@ angular.module('app')
 				clone.$update().then(function () {
 					mvIdentity.currentUser = clone;
 					deferred.resolve();
+					console.log('RESOLVED', deferred.resolve);
 				}, function (response) {
 					deferred.reject(response.data.reason);
 				});
@@ -73,6 +91,7 @@ angular.module('app')
 				$http.post('/logout', {logout: true}).then(function () {
 					mvIdentity.currentUser = undefined;
 					deferred.resolve();
+					console.log('RESOLVED', deferred.resolve);
 				});
 				return deferred.promise;
 			},

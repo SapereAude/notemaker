@@ -1,6 +1,6 @@
 angular.module('app').controller('mvSignupCtrl', function ($scope, mvUser, mvNotifier, $location, mvAuth) {
 
-	$scope.pageClass = 'page-site';
+	$scope.pageClass = '<page-site></page-site>';
 
 	$scope.signup = function () {
 		var newUserData = {
